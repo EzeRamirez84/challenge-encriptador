@@ -1,32 +1,29 @@
 let encriptarButton = document.querySelector('.input-container__buttons__encriptar')
 let desencriptarButton = document.querySelector('.input-container__buttons__desencriptar')
 
-const handleEncriptarButton = () => {
-  let text = document.getElementById('text')
-  if (text.value !== ''){
-    let newText = encriptar(text.value)
-    let outputText = document.getElementById('output-text__textarea')
-    outputText.innerText = newText
-    showOutput()
-  }else {
-    hideOutput()
-  }
-}
-encriptarButton.onclick = handleEncriptarButton
-console.log(encriptarButton);
+const regExp = /^[^A-ZÀ-ÿ]*$/
 
-const handleDesencriptarButton = () => {
+//'callback' va a ser para encriptar o desencriptar dependiendo de que boton sea
+const handleButton = (callback) => {
   let text = document.getElementById('text')
   if (text.value !== ''){
-    let newText = desencriptar(text.value)
-    let outputText = document.getElementById('output-text__textarea')
-    outputText.innerText = newText
-    showOutput()
+    if(!verificarTexto(text.value)){
+      alert('Solo letras minúsculas y sin acentos')
+      
+    }else{
+      let newText = callback(text.value)
+      let outputText = document.getElementById('output-text__textarea')
+      outputText.innerText = newText
+      showOutput()
+    }
+    
   }else {
     hideOutput()
   }
 }
-desencriptarButton.onclick = handleDesencriptarButton
+encriptarButton.onclick = ()=>handleButton(encriptar)
+
+desencriptarButton.onclick = ()=>handleButton(desencriptar)
 
 
 function showOutput() {
@@ -94,4 +91,10 @@ async function writeClipboardText() {
   }
 }
 
-window.onclose(()=>copyButton.removeEventListener("click"))
+//window.onclose(()=>copyButton.removeEventListener("click"))
+
+//funcionalidad verificar minusculas y sin acentos
+
+function verificarTexto(text) {
+  return regExp.test(text);
+}
