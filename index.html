@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="all-content">
+    <div>
+      <img class="logo" src="./assets/Logo.svg" alt="Logo Alura">
+    </div>
+
+    <main>
+      <div class="input-container">
+        <textarea class="inter-regular" name="text" id="text" placeholder="Ingrese el texto aqui"></textarea>
+        <div class="input-container__info">
+
+          <img class="input-container__info__svg" src="./assets/Info.svg" alt="signo">
+
+          <div class="input-container__info__text">Solo letras minúsculas y sin acentos</div>
+        </div>
+        <div class="input-container__buttons">
+          <button class="input-container__buttons__encriptar">Encriptar</button>
+          <button class="input-container__buttons__desencriptar">Desencriptar</button>
+        </div>
+      </div>
+      <div class="output-container">
+        <div class="no-output">
+          <img src="./assets/Muneco.png" alt="ningun mensaje">
+          <div class="output-container__text">
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          </div>
+        </div>
+
+        <div class="output-text">
+          <textarea name="output-text__textarea" id="output-text__textarea"></textarea>
+          <button>Copiar</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./assets/script.js"></script>
+</body>
+
+</html>
