@@ -25,9 +25,6 @@ body {
 
 #text {
   color: var(--dark-blue-300);
-  border-width: 0;
-  resize: none;
-  background-color: transparent;
   font-size: 32px;
   height: 100%;
 }
@@ -36,8 +33,18 @@ body {
   color: var(--dark-blue-300);
 }
 
-#text:focus-visible {
+textarea {
+  border-width: 0;
+  resize: none;
+  background-color: transparent;
+}
+
+textarea:focus-visible{
   outline: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 .all-content {
@@ -105,15 +112,8 @@ main {
   color: var(--dark-blue-300);
 }
 
-textarea {
-  border-width: 0;
-  resize: none;
-  background-color: transparent;
-}
 
-textarea:focus-visible{
-  outline: none;
-}
+
 
 .output-container {
   background-color: white;
@@ -127,8 +127,8 @@ textarea:focus-visible{
 
 .no-output {
   height: 100%;
-  visibility: hidden;
-  display: none;
+  visibility: visible;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -146,7 +146,8 @@ textarea:focus-visible{
 }
 
 .output-text {
-  display: flex;
+  display: none;
+  visibility: hidden;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
