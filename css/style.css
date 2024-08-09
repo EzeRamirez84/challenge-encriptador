@@ -94,11 +94,9 @@ main {
 
 .input-container__buttons button{
   width: 328px;
-  height: 67px;
-  padding: 10px 24px;
+  padding: 24px;
   border-radius: 24px;
-  border-color: var(--dark-blue-300);
-  border-style: solid;
+  border: 1px solid var(--dark-blue-300);
   font-size: 16px;
 }
 
@@ -157,12 +155,11 @@ main {
 .output-text button {
   background-color: transparent;
   width: 20.5rem;
-  height: 67px;
+  height: auto;
   margin: 32px;
-  padding: 10px 24px;
+  padding: 24px;
   border-radius: 24px;
-  border-color: var(--dark-blue-300);
-  border-style: solid;
+  border: 1px solid var(--dark-blue-300);
   font-size: 16px;
 }
 #output-text__textarea {
@@ -188,4 +185,88 @@ main {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+}
+
+@media screen and (max-width: 1024px){
+
+  .all-content {
+    flex-direction: column;
+    gap: 4rem;
+    height: 100%;
+  }
+  
+  main {
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .input-container {
+    height: 60%;
+  }
+
+  .output-container {
+    height: auto;
+    width: 100%;
+  }
+
+  .no-output img {
+    display: none;
+  }
+  
+  .output-container__text {
+    margin: 32px;
+  }
+  
+  .output-text button {
+    width: 90%;
+  }
+  #output-text__textarea {
+    margin: 32px auto;
+    width: 90%;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+
+  .all-content {
+    flex-direction: column;
+    gap: 4rem;
+    height: 100%;
+  }
+  
+  main {
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .input-container {
+    height: 60%;
+  }
+
+  .input-container__buttons{
+    flex-direction: column;
+  }
+
+  .output-container {
+    height: auto;
+    width: 90%;
+  }
+
+  .no-output img {
+    display: none;
+  }
+  
+  .output-container__text {
+    margin: 32px;
+  }
+  
+  .output-text button {
+    width: 90%;
+  }
+  #output-text__textarea {
+    margin-top: 32px;
+    width: 90%;
+    height: max-content;
+  }
 }
