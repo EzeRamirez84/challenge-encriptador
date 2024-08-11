@@ -91,7 +91,17 @@ async function writeClipboardText() {
   }
 }
 
-//window.onclose(()=>copyButton.removeEventListener("click"))
+//funcionalidad pegar con boton
+let pasteButton = document.querySelector('.button-pegar')
+pasteButton.addEventListener("click",() => copyClipboardText())
+
+async function copyClipboardText() {
+  const text = document.getElementById('text')
+  navigator.clipboard
+    .readText()
+    .then((clipText) => (text.value = clipText));
+}
+
 
 //funcionalidad verificar minusculas y sin acentos
 

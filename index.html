@@ -13,23 +13,29 @@
 
 <body>
   <div class="all-content">
-    <div>
+    <div class="logo-container">
       <img class="logo" src="./assets/Logo.svg" alt="Logo Alura">
     </div>
 
     <main>
       <div class="input-container">
         <textarea class="inter-regular" name="text" id="text" placeholder="Ingrese el texto aqui"></textarea>
-        <div class="input-container__info">
+        <div class="info-paste-container">
+          <div class="input-container__info">
 
-          <img class="input-container__info__svg" src="./assets/Info.svg" alt="signo">
+            <img class="input-container__info__svg" src="./assets/Info.svg" alt="signo">
 
-          <div class="input-container__info__text">Solo letras minúsculas y sin acentos</div>
+            <div class="input-container__info__text">Solo letras minúsculas y sin acentos</div>
+          </div>
+
+          <button class="button-pegar">Pegar</button>
         </div>
+
         <div class="input-container__buttons">
           <button class="input-container__buttons__encriptar">Encriptar</button>
           <button class="input-container__buttons__desencriptar">Desencriptar</button>
         </div>
+
       </div>
       <div class="output-container">
         <div class="no-output">
