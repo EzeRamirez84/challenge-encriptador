@@ -1,7 +1,10 @@
 # Challenge Encriptador de Alura ONE
 
-Esta version la hice en menos de un día, tengo pensado agregarle más cosas
+Este challenge lo hice guiandome del diseño de figma para el challenge.
 
-Ezequiel Ramírez 
+## Cosas que le agregué:
 
-` Developer ` 
+1. Agregue el boton "pegar" para poder pegar el texto copiado del texto de salida, de esta manera se hace mas práctico.
+2. También agregue colores diferentes con un tono violeta
+
+` Ezequiel Ramirez ` 
