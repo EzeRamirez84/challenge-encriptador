@@ -6,24 +6,28 @@ const regExp = /^[^A-ZÀ-ÿ]*$/
 //'callback' va a ser para encriptar o desencriptar dependiendo de que boton sea
 const handleButton = (callback) => {
   let text = document.getElementById('text')
-  if (text.value !== ''){
-    if(!verificarTexto(text.value)){
+  if (text.value !== '')
+  {
+    if (!verificarTexto(text.value))
+    {
       alert('Solo letras minúsculas y sin acentos')
-      
-    }else{
+
+    } else
+    {
       let newText = callback(text.value)
       let outputText = document.getElementById('output-text__textarea')
       outputText.innerText = newText
       showOutput()
     }
-    
-  }else {
+
+  } else
+  {
     hideOutput()
   }
 }
-encriptarButton.onclick = ()=>handleButton(encriptar)
+encriptarButton.onclick = () => handleButton(encriptar)
 
-desencriptarButton.onclick = ()=>handleButton(desencriptar)
+desencriptarButton.onclick = () => handleButton(desencriptar)
 
 
 function showOutput() {
@@ -80,20 +84,22 @@ function desencriptar(texto) {
 
 //funcionalidad copiar con boton
 let copyButton = document.getElementById('copy')
-copyButton.addEventListener("click",() => writeClipboardText())
+copyButton.addEventListener("click", () => writeClipboardText())
 
 async function writeClipboardText() {
-  try {
+  try
+  {
     let text = document.getElementById('output-text__textarea').value
     await navigator.clipboard.writeText(text);
-  } catch (error) {
+  } catch (error)
+  {
     console.error(error.message);
   }
 }
 
 //funcionalidad pegar con boton
 let pasteButton = document.querySelector('.button-pegar')
-pasteButton.addEventListener("click",() => copyClipboardText())
+pasteButton.addEventListener("click", () => copyClipboardText())
 
 async function copyClipboardText() {
   const text = document.getElementById('text')
@@ -108,3 +114,28 @@ async function copyClipboardText() {
 function verificarTexto(text) {
   return regExp.test(text);
 }
+
+//change theme
+const sunIcon = document.querySelector('.sun-icon');
+const purpleIcon = document.querySelector('.purple-icon')
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "original"){
+  setTheme("original");
+}
+
+function toggleMode() {
+  document.documentElement.classList.toggle("original");
+  document.documentElement.classList.toggle("second");
+  sunIcon.classList.toggle('hidden')
+  purpleIcon.classList.toggle('hidden')
+
+  let theme = "second";
+  if (document.documentElement.classList.contains("original")){
+    theme = "original";
+  }
+  console.log(document.documentElement.classList);
+  localStorage.setItem("theme", theme);
+}
+
+const setTheme = theme => document.documentElement.className = theme;
